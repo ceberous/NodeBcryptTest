@@ -9,12 +9,8 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 
 // Database Connection
-var options = {
-	user: 'admin',
-	pass: 'RwrQwyuABuwf'
-}
 
-mongoose.connect('mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/' , options);
+mongoose.connect('mongodb://heroku_app33567812:98otms4gvajli3iu5on7fk8eir@ds053688.mongolab.com:53688/heroku_app33567812');
 
 var User = mongoose.model('User' , new Schema({
 	id: ObjectId,

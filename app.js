@@ -4,7 +4,6 @@ var sessions = require('client-sessions');
 var bcrypt = require('bcryptjs');
 var csrf = require('csurf');
 
-var http = require('http');
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;

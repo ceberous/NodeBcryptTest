@@ -23,7 +23,10 @@
     "body-parser",
     "client-sessions",
     "bcryptjs",
-    "csurf"
+    "csurf",
+    "mongoose",
+    "http",
+    "mongodb"
   ],
   "license": "MIT"
 }

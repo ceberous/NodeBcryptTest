@@ -9,7 +9,12 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 
 // Database Connection
-mongoose.connect('mongodb://localhost/newauth');
+var options = {
+	user: 'admin',
+	pass: 'RwrQwyuABuwf'
+}
+
+mongoose.connect('mongodb://$OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/' , options);
 
 var User = mongoose.model('User' , new Schema({
 	id: ObjectId,
@@ -34,6 +39,9 @@ app.use(sessions({
 	secret: 'asdfadsfdskaslkjskjlasdfj',
 	duration: 30 * 60 * 1000,
 	activeDuration: 5 * 60 * 1000,
+	httpOnly: true , // Prevents Javascript
+	secure: true , // Only use cooies over https
+	ephemeral: true , // delete this cookie when browser is closed
 }));
 
 app.use(csrf());
